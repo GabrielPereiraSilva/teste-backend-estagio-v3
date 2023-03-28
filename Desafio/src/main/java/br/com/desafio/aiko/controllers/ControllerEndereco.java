@@ -13,27 +13,27 @@ public class ControllerEndereco {
     @Autowired
     private EnderecoService enderecoService;
 
-    @RequestMapping(value = "enderecos", method = RequestMethod.GET)
+    @RequestMapping(value = "endereco", method = RequestMethod.GET)
     public List<Endereco> getEndereco(){
         return enderecoService.getAllEnderecos();
     }
-    @RequestMapping(value = "enderecos/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "endereco/{id}", method = RequestMethod.GET)
     public Optional<Endereco> getEnderecoById(@PathVariable("id") Integer id){
         return enderecoService.getEnderecoById(id);
     }
-    @RequestMapping(value = "enderecos", method = RequestMethod.POST)
+    @RequestMapping(value = "endereco", method = RequestMethod.POST)
     public void insertEndereco(@RequestBody Endereco endereco){
         enderecoService.insertEndereco(endereco);
     }
-    @RequestMapping(value = "enderecos", method = RequestMethod.PUT)
+    @RequestMapping(value = "endereco", method = RequestMethod.PUT)
     public void updateEndereco(@RequestBody Endereco endereco){
         enderecoService.updateEndereco(endereco);
     }
-    @RequestMapping(value = "enderecos/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "endereco/{id}", method = RequestMethod.DELETE)
     public void deleteEndereco(@PathVariable("id") Integer id){
         enderecoService.deleteEnderecoById(id);
     }
-    @RequestMapping(value = "enderecos", method = RequestMethod.DELETE)
+    @RequestMapping(value = "endereco", method = RequestMethod.DELETE)
     public void deleteAllEndereco(){
         enderecoService.deleteAllEnderecos();
     }

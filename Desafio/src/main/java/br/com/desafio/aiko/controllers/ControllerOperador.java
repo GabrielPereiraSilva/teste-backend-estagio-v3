@@ -13,27 +13,27 @@ public class ControllerOperador {
     @Autowired
     OperadorService operadorService;
 
-    @RequestMapping(value = "operadores", method = RequestMethod.GET)
+    @RequestMapping(value = "operadore", method = RequestMethod.GET)
     public List<Operador> getOperadores(){
         return operadorService.getAllOperadores();
     }
-    @RequestMapping(value = "operadores/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "operadore/{id}", method = RequestMethod.GET)
     public Optional<Operador> getOperadorById(@PathVariable("id") Integer id){
         return operadorService.getOperadorById(id);
     }
-    @RequestMapping(value = "operadores", method = RequestMethod.POST)
+    @RequestMapping(value = "operadore", method = RequestMethod.POST)
     public void insertOperador(@RequestBody Operador operadores){
         operadorService.insertOperador(operadores);
     }
-    @RequestMapping(value = "operadores", method = RequestMethod.PUT)
+    @RequestMapping(value = "operadore", method = RequestMethod.PUT)
     public void updateOperador(@RequestBody Operador operadores){
         operadorService.updateOperador(operadores);
     }
-    @RequestMapping(value = "operadores/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "operadore/{id}", method = RequestMethod.DELETE)
     public void deleteOperador(@PathVariable("id") Integer id){
         operadorService.deleteOperadorById(id);
     }
-    @RequestMapping(value = "operadores", method = RequestMethod.DELETE)
+    @RequestMapping(value = "operadore", method = RequestMethod.DELETE)
     public void deleteAllOperadores(){
         operadorService.deleteAllOperadores();
     }

@@ -13,27 +13,27 @@ public class ControllerDepartamento {
     @Autowired
     private DepartamentoService departamentoService;
 
-    @RequestMapping(value = "departamentos", method = RequestMethod.GET)
+    @RequestMapping(value = "departamento", method = RequestMethod.GET)
     public List<Departamento> getDepartamentos(){
         return departamentoService.getAllDepartamentos();
     }
-    @RequestMapping(value = "departamentos/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "departamento/{id}", method = RequestMethod.GET)
     public Optional<Departamento> getDepartamentoById(@PathVariable("id") Integer id){
         return departamentoService.getDepartamentoById(id);
     }
-    @RequestMapping(value = "departamentos", method = RequestMethod.POST)
+    @RequestMapping(value = "departamento", method = RequestMethod.POST)
     public void insertDepartamento(@RequestBody Departamento departamento){
         departamentoService.insertDepartamento(departamento);
     }
-    @RequestMapping(value = "departamentos", method = RequestMethod.PUT)
+    @RequestMapping(value = "departamento", method = RequestMethod.PUT)
     public void updateDepartamento(@RequestBody Departamento departamento){
         departamentoService.updateDepartamento(departamento);
     }
-    @RequestMapping(value = "departamentos/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "departamento/{id}", method = RequestMethod.DELETE)
     public void deleteDepartamento(@PathVariable("id") Integer id){
         departamentoService.deleteDepartamentoById(id);
     }
-    @RequestMapping(value = "departamentos", method = RequestMethod.DELETE)
+    @RequestMapping(value = "departamento", method = RequestMethod.DELETE)
     public void deleteAllDepartamentos(){
         departamentoService.deleteAllDepartamentos();
     }
